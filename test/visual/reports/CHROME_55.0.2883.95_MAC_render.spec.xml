@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites errors="0"
-            failures="0"
+            failures="1"
             tests="1">
 
   <testsuite name="render.spec"
-    errors="0" failures="0" hostname="" id="" package="render.spec" skipped="0"
-    tests="1" time="8.120" timestamp="Wed, 04 Jan 2017 05:33:29 GMT">
+    errors="0" failures="1" hostname="" id="" package="render.spec" skipped="0"
+    tests="1" time="8.218" timestamp="Wed, 04 Jan 2017 06:23:10 GMT">
   
-    <testcase name="test_page_1" time="8.120" assertions="3">
+    <testcase name="test_page_1" time="8.218" assertions="4">
 
     
 
     
+
+      <failure message="Screenshots Match Failed for test_page_1.png with a tolerance of 10%.
+   Screenshots at:
+    Baseline: test/visual/screenshots/baseline/test_page_1.png
+    Result: test/visual/screenshots/results/test_page_1_npAnjQYTiv.png
+    Diff: test/visual/screenshots/diffs/test_page_1_npAnjQYTiv.png
+   Open test/visual/screenshots/diffs/test_page_1_npAnjQYTiv.png to see how the screenshot has changed.
+   If the Result Screenshot is correct you can use it to update the Baseline Screenshot and re-run your test:
+    cp test/visual/screenshots/results/test_page_1_npAnjQYTiv.png test/visual/screenshots/baseline/test_page_1.png">    at Object.&lt;anonymous&gt; (/Users/humphrey.park/Sandbox/nightwatch-browserstack-example/test/visual/nightwatch/commands/compareScreenshot.js:13:17)
+    at FSReqWrap.oncomplete (fs.js:123:15)</failure>
 
     
     </testcase>

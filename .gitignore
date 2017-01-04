@@ -1,6 +1,7 @@
 node_modules/
 .idea/
 build/
+test/visual/reports/
 
 .DS_Store
-test/visual/reports
+*-debug.log
