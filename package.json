@@ -1,0 +1,37 @@
+{
+  "name": "nightwatch-browserstack-example",
+  "version": "1.0.0",
+  "description": "Just another rendering test example project to run Nightwatch test on BrowserStack infrastructure.",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack",
+    "test:visual:local": "npm run build && ./node_modules/.bin/nightwatch -c ./local.nightwatch.conf.js",
+    "test:visual:ci": "npm run build && npm run test:visual:ci:modern && npm run test:visual:ci:ie && npm run testvisual:ci:ios && npm run test:visual:ci:android",
+    "test:visual:ci:clean": "rm -rf test/visual/screenshots/results/*.png test/visual/screenshots/diffs/*.png ",
+    "test:visual:ci:modern": "npm run test:ci:visual:clean && node ./bin/browserstack.local.runner.js -c ./browserstack.nightwatch.conf.js -e sl_chrome,sl_firefox,sl_safari",
+    "test:visual:ci:ie": "npm run test:ci:visual:clean && node ./bin/browserstack.local.runner.js -c ./browserstack.nightwatch.conf.js -e sl_ie_11,sl_ie_10,sl_ie_9,sl_ie_8,sl_ie_7,sl_ie_6",
+    "test:visual:ci:ios": "npm run test:ci:visual:clean && node ./bin/browserstack.local.runner.js -c ./browserstack.nightwatch.conf.js -e sl_ios_10,sl_ios_9_3,sl_ios_8_3, sl_ios_7,sl_ios_6,sl_ios_5_1",
+    "test:visual:ci:android": "npm run test:ci:visual:clean && node ./bin/browserstack.local.runner.js -c ./browserstack.nightwatch.conf.js -e sl_android_5_0,sl_android_4_3,sl_android_4_2,sl_android_4_1,sl_android_4_0,sl_android_4_1,sl_android_4_0"
+  },
+  "author": "Kyungwook Park",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-runtime": "^6.20.0",
+    "babelify": "^7.3.0",
+    "blink-diff": "^1.0.13",
+    "browserstack-local": "^1.2.0",
+    "es3ify-loader": "^0.2.0",
+    "nightwatch": "^0.9.9",
+    "pngjs": "^3.0.0",
+    "standard": "^8.6.0",
+    "standard-loader": "^5.0.0",
+    "static-server": "^2.0.3",
+    "webpack": "^1.14.0"
+  }
+}

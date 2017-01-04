@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+<iframe src="http://www.mocky.io/v2/58196300260000cd009ccbac"
+     width="160"
+     height="600"
+     frameborder="0"
+></iframe>
+
+<script charset="utf-8" src="../../../build/library.min.js"></script>
+
+<script>
+// dummy function
+function callMe(something) {
+  var p = document.createElement('P');
+  p.innerText = 'hello, ' + something;
+  p.id = 'nightwatch'
+  document.body.appendChild(p)
+}
+
+// check if library call properly
+library.callFunctionByName('callMe', window, 'nightwatch')
+</script>
+</body>
+</html>
